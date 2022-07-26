@@ -5,7 +5,7 @@ const Users = () => {
     const [users, setUsers] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/users')
+        fetch('http://localhost:8000/users')
             .then(res => res.json())
             .then(data => setUsers(data));
     }, []);
@@ -14,7 +14,7 @@ const Users = () => {
     const handleDeleteUser = id => {
         const proceed = window.confirm('Are you sure, you want to delete?');
         if (proceed) {
-            const url = `http://localhost:5000/users/${id}`;
+            const url = `http://localhost:8000/users/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })
